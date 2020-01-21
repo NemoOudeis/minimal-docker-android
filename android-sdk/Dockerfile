@@ -13,6 +13,7 @@ RUN echo -e ${sdk_license_preview} > "${android_home}/licenses/android-sdk-previ
 
 # Download and install Android SDK
 ARG SDK_TOOLS_REVISION=none
-ARG sdk_file=sdk-tools-linux-${SDK_TOOLS_REVISION}.zip
+ARG sdk_file=sdk-tools-linux-4333796.zip
 RUN wget -q -O /tmp/${sdk_file} https://dl.google.com/android/repository/${sdk_file}
 RUN unzip -q /tmp/${sdk_file} -d ${android_home}
+

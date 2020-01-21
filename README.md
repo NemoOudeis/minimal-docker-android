@@ -1,10 +1,24 @@
 # Android SDK Docker images
 
-All images are based on different OpenJDK images from [https://hub.docker.com/_/openjdk/].
+All images are based on [Adopt Open JDK images](https://hub.docker.com/_/adoptopenjdk).
+
+They are meant to replace other, more bloated images for CI and development purposes.
+
+## Get started
+
+```shell
+docker run -it --rm nemooudeis/android-sdk:jdk8 /bin/bash
+# with your locally mounted source code
+docker run -it --rm \
+    --mount type=bind,src=/path/to/code,dst=/code \
+    nemooudeis/android-sdk:jdk8 \
+    /bin/bash
+```
 
 ## What's installed
-- OpenJDK (for version see below)
-- Android SDK tools (for version see the number after `tools-` in the tag)
+
+- OpenJDK
+- Android SDK tools
 - Android SDK license
 - Android SDK preview license
 - `ANDROID_HOME` env var is set
@@ -12,29 +26,7 @@ All images are based on different OpenJDK images from [https://hub.docker.com/_/
 
 ## Available tags
 
-OpenJDK 8:
-- `tools-26.1.1-jdk8u222`
-- `tools-26.1.1-jdk8`
+- `jdk8`
+- `jdk11`
 
-OpenJDK 11:
-- `tools-26.1.1-jdk11.0.4`
-- `tools-26.1.1-jdk11`
-
-OpenJDK 12:
-- `tools-26.1.1-jdk12.0.2`
-- `tools-26.1.1-jdk11`
-
-AdoptOpenJDK 8:
-- `tools-26.1.1-adoptjdk8u222`
-- `tools-26.1.1-adoptjdk8`
-
-AdoptOpenJDK 11:
-- `tools-26.1.1-adoptjdk11.0.4`
-- `tools-26.1.1-adoptjdk11`
-
-AdoptOpenJDK 12:
-- `tools-26.1.1-adoptjdk12.0.2`
-- `tools-26.1.1-adoptjdk12`
-
-
-Older images can be found [on Docker Hub](https://hub.docker.com/r/gabrielittner/android-sdk/tags/).
+See [Docker Hub](https://hub.docker.com/r/nemooudeis/android-sdk).
